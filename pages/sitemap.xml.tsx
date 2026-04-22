@@ -18,22 +18,26 @@ export const getServerSideProps: GetServerSideProps = async ({ res, req }) => {
   try {
     const siteMap = await getSiteMap()
 
-  // cache for up to 8 hours
-  res.setHeader(
-    'Cache-Control',
-    'public, max-age=28800, stale-while-revalidate=28800'
-  )
-  res.setHeader('Content-Type', 'text/xml')
-  res.write(createSitemap(siteMap))
-  res.end()
+    res.setHeader(
+      'Cache-Control',
+      'public, max-age=28800, stale-while-revalidate=28800'
+    )
+    res.setHeader('Content-Type', 'text/xml')
+    res.write(createSitemap(siteMap))
+    res.end()
 
-  return {
-    props: {}
+    return {
+      props: {}
+    }
+  } catch (err) {
+    res.statusCode = 500
+    res.end()
+    return { props: {} }
   }
 }
 
-const createSitemap = (siteMap: SiteMap) =>
-  `<?xml version="1.0" encoding="UTF-8"?>
+function createSitemap(siteMap: SiteMap) {
+  return `<?xml version="1.0" encoding="UTF-8"?>
   <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
       <loc>${host}</loc>
@@ -54,6 +58,7 @@ const createSitemap = (siteMap: SiteMap) =>
       .join('')}
   </urlset>
 `
+}
 
 export default function noop() {
   return null

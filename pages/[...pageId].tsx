@@ -26,7 +26,7 @@ export const getStaticProps: GetStaticProps<PageProps, Params> = async (
 
 export async function getStaticPaths() {
   return {
-    paths: [{ params: { pageId: [] } }],
+    paths: [],
     fallback: 'blocking'
   }
 }
