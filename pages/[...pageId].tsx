@@ -1,7 +1,7 @@
 import { type GetStaticProps } from 'next'
 
 import { NotionPage } from '@/components/NotionPage'
-import { domain, isDev, rootNotionPageId } from '@/lib/config'
+import { domain, isDev } from '@/lib/config'
 import { resolveNotionPage } from '@/lib/resolve-notion-page'
 import { type PageProps, type Params } from '@/lib/types'
 
