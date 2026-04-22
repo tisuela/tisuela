@@ -4,7 +4,7 @@ import type { SiteMap } from '@/lib/types'
 import { host } from '@/lib/config'
 import { getSiteMap } from '@/lib/get-site-map'
 
-export const getServerSideProps: GetServerSideProps = async ({ req, res }) => {
+export const getServerSideProps: GetServerSideProps = async ({ res, req }) => {
   if (req.method !== 'GET') {
     res.statusCode = 405
     res.setHeader('Content-Type', 'application/json')
@@ -15,7 +15,8 @@ export const getServerSideProps: GetServerSideProps = async ({ req, res }) => {
     }
   }
 
-  const siteMap = await getSiteMap()
+  try {
+    const siteMap = await getSiteMap()
 
   // cache for up to 8 hours
   res.setHeader(
