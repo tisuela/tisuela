@@ -1,4 +1,3 @@
-import { type NextApiRequest, type NextApiResponse } from 'next'
 import { ImageResponse } from 'next/og'
 import { type PageBlock } from 'notion-types'
 import {
@@ -32,8 +31,7 @@ type NotionPageInfo = {
 }
 
 export default async function OGImage(
-  req: NextApiRequest,
-  res: NextApiResponse
+  req: Request
 ) {
   const { searchParams } = new URL(req.url!)
   const pageId = parsePageId(
@@ -43,14 +41,24 @@ export default async function OGImage(
     return new Response('Invalid notion page id', { status: 400 })
   }
 
-  const pageInfoOrError = await getNotionPageInfo({ pageId })
-  if (pageInfoOrError.type === 'error') {
-    return res.status(pageInfoOrError.error.statusCode).send({
-      error: pageInfoOrError.error.message
-    })
+  let pageInfo: NotionPageInfo = {
+    pageId,
+    title: libConfig.name,
+    image: undefined,
+    imageObjectPosition: undefined,
+    author: libConfig.author,
+    authorImage: undefined,
+    detail: libConfig.domain
   }
-  const pageInfo = pageInfoOrError.data
-  console.log(pageInfo)
+
+  try {
+    const pageInfoOrError = await getNotionPageInfo({ pageId })
+    if (pageInfoOrError.type === 'success') {
+      pageInfo = pageInfoOrError.data
+    }
+  } catch (err) {
+    console.warn('social-image fallback', { pageId, err })
+  }
 
   return new ImageResponse(
     <div
