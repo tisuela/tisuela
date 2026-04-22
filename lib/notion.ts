@@ -90,5 +90,5 @@ export async function getPage(pageId: string): Promise<ExtendedRecordMap> {
 }
 
 export async function search(params: SearchParams): Promise<SearchResults> {
-  return notion.search(params)
+  return fetchWithRetry(() => notion.search(params))
 }

@@ -11,8 +11,26 @@ import * as config from './config'
 import { includeNotionIdInUrls } from './config'
 import { getCanonicalPageId } from './get-canonical-page-id'
 import { notion } from './notion-api'
+import { getPreviewImageMap } from './preview-images'
 
 const uuid = !!includeNotionIdInUrls
+
+async function fetchWithRetry<T>(fn: () => Promise<T>, retries = 3): Promise<T> {
+  for (let i = 0; i < retries; i++) {
+    try {
+      return await fn()
+    } catch (err: any) {
+      if (err.statusCode === 429 && i < retries - 1) {
+        const delay = Math.pow(2, i) * 1000
+        console.warn(`rate limited, retrying in ${delay}ms...`)
+        await new Promise((r) => setTimeout(r, delay))
+        continue
+      }
+      throw err
+    }
+  }
+  throw new Error('max retries exceeded')
+}
 
 export async function getSiteMap(): Promise<types.SiteMap> {
   const partialSiteMap = await getAllPages(
@@ -32,12 +50,14 @@ const getAllPages = pMemoize(getAllPagesImpl, {
 
 const getPage = async (pageId: string, opts?: any) => {
   console.log('\nnotion getPage', uuidToId(pageId))
-  return notion.getPage(pageId, {
-    kyOptions: {
-      timeout: 30_000
-    },
-    ...opts
-  })
+  return fetchWithRetry(() =>
+    notion.getPage(pageId, {
+      kyOptions: {
+        timeout: 30_000
+      },
+      ...opts
+    })
+  )
 }
 
 async function getAllPagesImpl(
