@@ -1,4 +1,3 @@
-import ky from 'ky'
 import { type NextApiRequest, type NextApiResponse } from 'next'
 import { ImageResponse } from 'next/og'
 import { type PageBlock } from 'notion-types'
@@ -14,9 +13,23 @@ import {
 import * as libConfig from '@/lib/config'
 import { mapImageUrl } from '@/lib/map-image-url'
 import { notion } from '@/lib/notion-api'
-import { type NotionPageInfo, type PageError } from '@/lib/types'
 
 export const runtime = 'edge'
+
+type PageError = {
+  message: string
+  statusCode: number
+}
+
+type NotionPageInfo = {
+  pageId: string
+  title: string
+  image?: string
+  imageObjectPosition?: string
+  author?: string
+  authorImage?: string
+  detail?: string
+}
 
 export default async function OGImage(
   req: NextApiRequest,
@@ -268,8 +281,8 @@ async function isUrlReachable(
   }
 
   try {
-    await ky.head(url)
-    return true
+    const response = await fetch(url, { method: 'HEAD' })
+    return response.ok
   } catch {
     return false
   }
