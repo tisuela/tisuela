@@ -1,7 +1,7 @@
 import { type GetStaticProps } from 'next'
 
 import { NotionPage } from '@/components/NotionPage'
-import { domain, isDev } from '@/lib/config'
+import { domain, isDev, pageUrlOverrides } from '@/lib/config'
 import { resolveNotionPage } from '@/lib/resolve-notion-page'
 import { type PageProps, type Params } from '@/lib/types'
 
@@ -24,6 +24,8 @@ export const getStaticProps: GetStaticProps<PageProps, Params> = async (
   }
 }
 
+const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms))
+
 export async function getStaticPaths() {
   if (isDev) {
     return {
@@ -32,8 +34,27 @@ export async function getStaticPaths() {
     }
   }
 
+  const overridePageIds = Object.keys(pageUrlOverrides)
+
+  console.log(`pre-rendering ${overridePageIds.length} override pages...`)
+
+  const paths: Array<{ params: { pageId: string[] } }> = []
+
+  for (let i = 0; i < overridePageIds.length; i++) {
+    const pageId = overridePageIds[i]!
+    paths.push({ params: { pageId: pageId.split('/').filter(Boolean) } })
+
+    console.log(`pre-rendered ${i + 1}/${overridePageIds.length}: ${pageId}`)
+
+    if (i < overridePageIds.length - 1) {
+      await delay(1500)
+    }
+  }
+
+  console.log(`done pre-rendering ${paths.length} override paths`)
+
   return {
-    paths: [],
+    paths,
     fallback: 'blocking'
   }
 }
