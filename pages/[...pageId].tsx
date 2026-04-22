@@ -1,7 +1,7 @@
 import { type GetStaticProps } from 'next'
 
 import { NotionPage } from '@/components/NotionPage'
-import { domain, isDev, pageUrlOverrides } from '@/lib/config'
+import { domain, isDev } from '@/lib/config'
 import { getSiteMap } from '@/lib/get-site-map'
 import { resolveNotionPage } from '@/lib/resolve-notion-page'
 import { type PageProps, type Params } from '@/lib/types'
@@ -37,24 +37,16 @@ export async function getStaticPaths() {
 
   const siteMap = await getSiteMap()
 
-  // Combine sitemap paths with URL overrides (e.g., /articles, /projects/foo)
-  // URL overrides might not be in the sitemap if not directly linked from root.
-  const allPageIds = [
-    ...new Set([
-      ...Object.keys(siteMap.canonicalPageMap),
-      ...Object.keys(pageUrlOverrides)
-    ])
-  ]
-
-  const staticPaths = {
-    paths: allPageIds.map((pageId) => ({
+  const siteMapPaths = Object.keys(siteMap.canonicalPageMap)
+    .slice(0, 10)
+    .map((pageId) => ({
       params: { pageId: pageId.split('/').filter(Boolean) }
-    })),
-    fallback: true
-  }
+    }))
 
-  console.log(staticPaths.paths)
-  return staticPaths
+  return {
+    paths: siteMapPaths,
+    fallback: 'blocking'
+  }
 }
 
 export default function NotionDomainDynamicPage(props: PageProps) {
