@@ -153,7 +153,7 @@ const formatNotionDate = (
     return dateInput
   }
 
-  return formatDate(parsedDate)
+  return formatDate(parsedDate.getTime())
 }
 
 const propertyLastEditedTimeValue = (
