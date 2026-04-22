@@ -12,7 +12,6 @@ import {
 } from 'notion-utils'
 
 import * as libConfig from '@/lib/config'
-import interSemiBoldFont from '@/lib/fonts/inter-semibold'
 import { mapImageUrl } from '@/lib/map-image-url'
 import { notion } from '@/lib/notion-api'
 import { type NotionPageInfo, type PageError } from '@/lib/types'
@@ -151,15 +150,7 @@ export default async function OGImage(
     </div>,
     {
       width: 1200,
-      height: 630,
-      fonts: [
-        {
-          name: 'Inter',
-          data: interSemiBoldFont,
-          style: 'normal',
-          weight: 700
-        }
-      ]
+      height: 630
     }
   )
 }
