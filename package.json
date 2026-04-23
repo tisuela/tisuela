@@ -55,6 +55,7 @@
   },
   "devDependencies": {
     "@fisch0920/config": "^1.4.0",
+    "@notionhq/client": "^5.20.0",
     "@types/node": "^25.5.0",
     "@types/prismjs": "^1.26.5",
     "@types/react": "^19.2.14",

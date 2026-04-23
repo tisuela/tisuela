@@ -21,7 +21,13 @@ async function fetchWithRetry<T>(fn: () => Promise<T>, retries = 5): Promise<T> 
       return await fn()
     } catch (err: any) {
       if (err.statusCode === 429 && i < retries - 1) {
-        const delay = Math.pow(3, i) * 1000
+        let delay = Math.pow(2, i) * 1000
+        if (err.headers?.['retry-after']) {
+          const retryAfter = parseInt(err.headers['retry-after'], 10)
+          if (!isNaN(retryAfter)) {
+            delay = retryAfter * 1000
+          }
+        }
         console.warn(`rate limited, retrying in ${delay}ms...`)
         await new Promise((r) => setTimeout(r, delay))
         continue
