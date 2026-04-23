@@ -16,6 +16,8 @@ import { getTweetsMap } from './get-tweets'
 import { notion } from './notion-api'
 import { getPreviewImageMap } from './preview-images'
 
+const pageCache = new Map<string, ExtendedRecordMap>()
+
 async function fetchWithRetry<T>(fn: () => Promise<T>, retries = 5): Promise<T> {
   for (let i = 0; i < retries; i++) {
     try {
@@ -62,12 +64,14 @@ const getNavigationLinkPages = pMemoize(
 )
 
 export async function getPage(pageId: string): Promise<ExtendedRecordMap> {
+  const cached = pageCache.get(pageId)
+  if (cached) {
+    return cached
+  }
+
   let recordMap = await fetchWithRetry(() => notion.getPage(pageId))
 
   if (navigationStyle !== 'default') {
-    // ensure that any pages linked to in the custom navigation header have
-    // their block info fully resolved in the page record map so we know
-    // the page title, slug, etc.
     const navigationLinkRecordMaps = await getNavigationLinkPages()
 
     if (navigationLinkRecordMaps?.length) {
@@ -86,6 +90,7 @@ export async function getPage(pageId: string): Promise<ExtendedRecordMap> {
 
   await getTweetsMap(recordMap)
 
+  pageCache.set(pageId, recordMap)
   return recordMap
 }
 
