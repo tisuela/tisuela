@@ -20,7 +20,7 @@ export const getStaticProps: GetStaticProps<PageProps, Params> = async (
       return { props: { error: props.error }, revalidate: 60 }
     }
 
-    return { props, revalidate: 10 }
+    return { props, revalidate: 3600 }
   } catch (err) {
     console.error('page error', domain, rawPageId, err)
 
@@ -31,24 +31,22 @@ export const getStaticProps: GetStaticProps<PageProps, Params> = async (
           statusCode: 500
         }
       },
-      revalidate: 60
+      revalidate: 3600
     }
   }
 }
-
-const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms))
 
 export async function getStaticPaths() {
   if (isDev) {
     return {
       paths: [],
-      fallback: true
+      fallback: 'blocking'
     }
   }
 
   return {
     paths: [],
-    fallback: true
+    fallback: 'blocking'
   }
 }
 
