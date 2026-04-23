@@ -16,11 +16,23 @@ export const getStaticProps: GetStaticProps<PageProps, Params> = async (
   try {
     const props = await resolveNotionPage(domain, rawPageId)
 
+    if (props.error) {
+      return { props: { error: props.error }, revalidate: 60 }
+    }
+
     return { props, revalidate: 10 }
   } catch (err) {
     console.error('page error', domain, rawPageId, err)
 
-    throw err
+    return {
+      props: {
+        error: {
+          message: err.message || 'Failed to load page',
+          statusCode: 500
+        }
+      },
+      revalidate: 60
+    }
   }
 }
 
