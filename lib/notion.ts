@@ -18,7 +18,7 @@ import { getPreviewImageMap } from './preview-images'
 
 const pageCache = new Map<string, ExtendedRecordMap>()
 
-async function fetchWithRetry<T>(fn: () => Promise<T>, retries = 5): Promise<T> {
+async function fetchWithRetry<T>(fn: () => Promise<T>, retries = 2): Promise<T> {
   for (let i = 0; i < retries; i++) {
     try {
       return await fn()
