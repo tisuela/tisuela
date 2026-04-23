@@ -1,7 +1,7 @@
 import { type GetStaticProps } from 'next'
 
 import { NotionPage } from '@/components/NotionPage'
-import { domain, isDev, pageUrlOverrides } from '@/lib/config'
+import { domain, pageUrlOverrides } from '@/lib/config'
 import { resolveNotionPage } from '@/lib/resolve-notion-page'
 import { type PageProps, type Params } from '@/lib/types'
 
@@ -26,15 +26,13 @@ export const getStaticProps: GetStaticProps<PageProps, Params> = async (
 }
 
 export async function getStaticPaths() {
-  const pageIds = Object.keys(pageUrlOverrides)
+  const pageIds = Object.keys(pageUrlOverrides || {})
 
   const paths = pageIds
     .filter(p => p !== '/' && p !== '')
     .map((pageId: string) => ({
       params: { pageId: pageId.split('/').filter(Boolean) }
     }))
-
-  console.log('Pre-rendering paths:', paths.map(p => p.params.pageId))
 
   return { paths, fallback: false }
 }
