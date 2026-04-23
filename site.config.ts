@@ -45,7 +45,10 @@ export default siteConfig({
   //   '/foo': '067dd719a912471ea9a3ac10710e7fdf',
   //   '/bar': '0be6efce9daf42688f65c76b89f8eb27'
   // }
-  pageUrlOverrides: null,
+  pageUrlOverrides: {
+    '/': '898a0e4211f1493d9b35a138aad12912',
+    '/missions': '1b44f08010bb49538f6148cf026d7933'
+  },
 
   // whether to use the default notion navigation style or a custom one with links to
   // important pages
