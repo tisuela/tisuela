@@ -34,6 +34,11 @@ export default {
         destination: 'https://forms.gle/2CjNd8pRjuCqjRNh6',
         permanent: true,
       },
+      {
+        source: '/missions',
+        destination: 'https://www.tisuela.com/cobn-missions-2026',
+        permanent: true,
+      },
     ]
   },
 
