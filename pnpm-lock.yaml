@@ -84,6 +84,9 @@ importers:
       '@fisch0920/config':
         specifier: ^1.4.0
         version: 1.4.0(@typescript-eslint/parser@8.55.0(eslint@9.39.2)(typescript@5.9.3))(eslint@9.39.2)(prettier@3.8.1)(typescript@5.9.3)(zod@4.3.6)
+      '@notionhq/client':
+        specifier: ^5.20.0
+        version: 5.20.0
       '@types/node':
         specifier: ^25.5.0
         version: 25.5.0
@@ -636,6 +639,10 @@ packages:
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [win32]
+
+  '@notionhq/client@5.20.0':
+    resolution: {integrity: sha512-MS0DFSfHPLZ0wi+e9mOP16gCCYbWAkaiMuu/rVK9KxDlKac4oAgHReOfTglcd77g/nlg78snp+KB7fNWP75bEw==}
+    engines: {node: '>=18'}
 
   '@opentelemetry/api-logs@0.208.0':
     resolution: {integrity: sha512-CjruKY9V6NMssL/T1kAFgzosF1v9o6oeN+aX5JB/C/xPNtmgIJqcXHG7fA82Ou1zCpWGl4lROQUKwUNE1pMCyg==}
@@ -3094,6 +3101,8 @@ snapshots:
 
   '@next/swc-win32-x64-msvc@16.2.0':
     optional: true
+
+  '@notionhq/client@5.20.0': {}
 
   '@opentelemetry/api-logs@0.208.0':
     dependencies:
