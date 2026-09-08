@@ -147,7 +147,10 @@ const formatNotionDate = (
 }
 
 const propertyLastEditedTimeValue = (
-  { block, pageHeader }: any,
+  {
+    block,
+    pageHeader
+  }: { block: Record<string, unknown>; pageHeader?: boolean },
   defaultFn: () => React.ReactNode
 ) => {
   if (pageHeader && block?.last_edited_time) {
@@ -160,7 +163,11 @@ const propertyLastEditedTimeValue = (
 }
 
 const propertyDateValue = (
-  { data, schema, pageHeader }: any,
+  {
+    data,
+    schema,
+    pageHeader
+  }: { data: unknown; schema: Record<string, string>; pageHeader?: boolean },
   defaultFn: () => React.ReactNode
 ) => {
   if (pageHeader && schema?.name?.toLowerCase() === 'published') {
@@ -177,7 +184,10 @@ const propertyDateValue = (
 }
 
 const propertyTextValue = (
-  { schema, pageHeader }: any,
+  {
+    schema,
+    pageHeader
+  }: { schema: Record<string, string>; pageHeader?: boolean },
   defaultFn: () => React.ReactNode
 ) => {
   if (pageHeader && schema?.name?.toLowerCase() === 'author') {
@@ -215,7 +225,7 @@ export function NotionPage({
   const { isDarkMode } = useDarkMode()
 
   const siteMapPageUrl = React.useMemo(() => {
-    const params: any = {}
+    const params: Record<string, string> = {}
     if (lite) params.lite = lite
 
     const searchParams = new URLSearchParams(params)
@@ -243,16 +253,8 @@ export function NotionPage({
   const title = getBlockTitle(block, recordMap) || site.name
 
   React.useEffect(() => {
-    console.log('notion page', {
-      isDev: config.isDev,
-      title,
-      pageId,
-      rootNotionPageId: site.rootNotionPageId,
-      recordMap
-    })
-
     // add important objects to the window global for easy debugging
-    const g = window as any
+    const g = window as Record<string, unknown>
     g.pageId = pageId
     g.recordMap = recordMap
     g.block = block
@@ -283,8 +285,6 @@ export function NotionPage({
         pageAside={pageAside}
         footer={<Footer />}
       />
-
-
     </>
   )
 }

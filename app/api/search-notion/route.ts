@@ -36,9 +36,7 @@ export async function POST(request: Request) {
     )
   }
 
-  console.log('<<< lambda search-notion', searchParams)
   const results = await search(searchParams)
-  console.log('>>> lambda search-notion', results)
 
   return Response.json(results, {
     headers: {

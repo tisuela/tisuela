@@ -1,24 +1,29 @@
 {
-  "name": "Next.js Notion Starter Kit",
-  "short_name": "Starter Kit",
+  "name": "Nathaniel Tisuela",
+  "short_name": "Tisuela",
   "icons": [
     {
-      "src": "/favicon.png",
-      "type": "image/png",
-      "sizes": "32x32"
+      "src": "/favicon.svg",
+      "type": "image/svg+xml",
+      "sizes": "any"
     },
     {
-      "src": "/favicon-128x128.png",
+      "src": "/favicon-32x32.png",
       "type": "image/png",
-      "sizes": "128x128"
+      "sizes": "32x32"
     },
     {
       "src": "/favicon-192x192.png",
       "type": "image/png",
       "sizes": "192x192"
+    },
+    {
+      "src": "/favicon-512x512.png",
+      "type": "image/png",
+      "sizes": "512x512"
     }
   ],
-  "theme_color": "#000000",
-  "background_color": "#000000",
+  "theme_color": "#2d3439",
+  "background_color": "#2d3439",
   "display": "standalone"
 }

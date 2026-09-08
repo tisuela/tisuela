@@ -79,35 +79,17 @@
     {
       "name": "OO Languages",
       "level": "Master",
-      "keywords": [
-        "Python",
-        "Java",
-        "C++",
-        "C"
-      ]
+      "keywords": ["Python", "Java", "C++", "C"]
     },
     {
       "name": "Web Development",
       "level": "Master",
-      "keywords": [
-        "GraphQL",
-        "REST",
-        "Flask",
-        "Django",
-        "React",
-        "Express.js"
-      ]
+      "keywords": ["GraphQL", "REST", "Flask", "Django", "React", "Express.js"]
     },
     {
       "name": "AWS",
       "level": "Master",
-      "keywords": [
-        "EC2",
-        "RDS",
-        "Elastic Beanstalk",
-        "Amplify",
-        "S3"
-      ]
+      "keywords": ["EC2", "RDS", "Elastic Beanstalk", "Amplify", "S3"]
     },
     {
       "name": "DevOps",
@@ -122,11 +104,7 @@
     {
       "name": "Databases",
       "level": "Master",
-      "keywords": [
-        "MongoDB",
-        "PostgreSQL",
-        "Firebase"
-      ]
+      "keywords": ["MongoDB", "PostgreSQL", "Firebase"]
     }
   ],
   "references": 0,

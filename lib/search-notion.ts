@@ -30,10 +30,4 @@ async function searchNotionImpl(
       throw error
     })
     .then((res) => res.json() as Promise<types.SearchResults>)
-
-  // return ky
-  //   .post(api.searchNotion, {
-  //     json: params
-  //   })
-  //   .json()
 }

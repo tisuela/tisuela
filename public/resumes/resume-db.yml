@@ -1,7 +1,7 @@
 name: 'Nathaniel Louis Tisuela'
 info:
   label: 'Software Developer'
-  brief: ""
+  brief: ''
 contact:
   email: ntisuela@uci.edu
   phone: (916)-601-5371
@@ -10,15 +10,14 @@ meta:
   format: FRESH@^1.0.0-beta
   modified: '2020-09-16T18:52:48.879Z'
 location:
-  city: ""
-  region: ""
+  city: ''
+  region: ''
   country: US
-  code: ""
+  code: ''
   address: 'Irvine, California'
 employment:
   history:
-    -
-      employer: 'Advanced Power and Energy Program'
+    - employer: 'Advanced Power and Energy Program'
       url: 'http://apep.uci.edu'
       position: 'Computer Network Technician'
       summary: 'Maintained, troubleshooted, and deployed over 100 machines.'
@@ -33,8 +32,7 @@ employment:
         - 'Developed powershell scripts to create technical reports and deploy for over 100 machines. This automation makes weekly tasks 3 times faster.'
         - 'Authored easy-to-follow guides to teach new softwares to over 100 users.'
         - 'Debugged Python software to resume monitoring of utilities in dozens of on-campus facilities.'
-    -
-      position: 'IT Assistant'
+    - position: 'IT Assistant'
       employer: 'Lee Starloop IT'
       summary: 'IT support to offer, deploy, and troubleshoot software/systems for various businesses.'
       start: '2017-10-31'
@@ -51,11 +49,10 @@ education:
   level: B.S.
   degree: 'Computer Science'
   history:
-    -
-      institution: 'UC Irvine'
+    - institution: 'UC Irvine'
       start: '2017-12-31'
       end: 2021-06
-      grade: ""
+      grade: ''
       curriculum:
         - 'Data Structure Implementation and Analysis'
         - 'Information Retrieval'
@@ -65,20 +62,18 @@ education:
         - 'Databases and Web Applications'
       summary: 'B.S. in Computer Science'
       area: 'Computer Science'
-      studyType: 'Bachelor''s degree'
+      studyType: "Bachelor's degree"
 service: {}
 skills:
   sets:
-    -
-      name: 'OO Languages'
+    - name: 'OO Languages'
       level: Master
       skills:
         - Python
         - Java
         - C++
         - C
-    -
-      name: 'Web Development'
+    - name: 'Web Development'
       level: Master
       skills:
         - GraphQL
@@ -90,22 +85,19 @@ skills:
         - JQuery
         - HTML
         - CSS
-    -
-      name: Scripting
+    - name: Scripting
       level: Master
       skills:
         - Powershell
         - Javascript
-    -
-      name: Databases
+    - name: Databases
       level: Master
       skills:
         - MongoDB
         - SQL
         - Firebase
 projects:
-  -
-    title: CourseCake
+  - title: CourseCake
     category: 'Web API'
     role: Creator
     url: 'https://docs.coursecake.tisuela.com'
@@ -124,8 +116,7 @@ projects:
       - 'Launched CourseCake to become the most active cross-campus API supporting GraphQL and REST endpoints, cataloguing thousands of classes.'
       - 'Publicized CourseCake through easy-to-understand and interactive documentation, making CourseCake a teachable tool.'
       - 'Developed sensible schemas to model course discovery based on existing course discovery tools.'
-  -
-    title: 'PeterPortal API'
+  - title: 'PeterPortal API'
     category: 'Web App'
     role: Developer
     url: 'https://github.com/icssc-projects/peterportal-public-api'
@@ -143,8 +134,7 @@ projects:
       - 'Proposed and implemented GraphQL, which simplifies 5 REST endpoints into 1 endpoint, making complex queries up to 500% more efficient.'
 affiliation:
   history:
-    -
-      organization: 'Acts College Ministry'
+    - organization: 'Acts College Ministry'
       start: '2019-09-01'
       category: club
       role: President
@@ -153,21 +143,18 @@ affiliation:
       highlights:
         - 'With the help of the board, Acts saw membership increase by 200%.'
         - 'Conducted migration to remote meetings and activities due to COVID-19 (maintained majority member retention) through close teamwork with the board and sister clubs.'
-        - 'Designed a new website and established presence on UCI''s online system, seeing over 70 student engagements in 2 days during a virtual fair.'
+        - "Designed a new website and established presence on UCI's online system, seeing over 70 student engagements in 2 days during a virtual fair."
         - 'Coordinated large group events with a team of 6 members, averaging 2 large group events a month both before and after COVID-19'
 social:
-  -
-    label: LinkedIn
+  - label: LinkedIn
     network: LinkedIn
     url: 'https://www.linkedin.com/in/nathaniel-louis-tisuela-9b1078155/'
     user: nathaniel-louis-tisuela-9b1078155
-  -
-    label: Github
+  - label: Github
     network: Github
     url: 'https://github.com/nananananate/CourseCake'
     user: nananananate
 testimonials: []
 languages:
-  -
-    language: English
+  - language: English
     fluency: 'Native speaker'

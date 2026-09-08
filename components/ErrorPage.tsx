@@ -1,3 +1,5 @@
+import Image from 'next/image'
+
 import styles from './styles.module.css'
 
 export function ErrorPage({
@@ -20,7 +22,13 @@ export function ErrorPage({
           </button>
         )}
 
-        <img src='/error.png' alt='Error' className={styles.errorImage} />
+        <Image
+          src='/error.png'
+          alt='Error'
+          width={300}
+          height={300}
+          className={styles.errorImage}
+        />
       </main>
     </div>
   )

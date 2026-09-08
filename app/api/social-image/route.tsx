@@ -16,8 +16,6 @@ import { notion } from '@/lib/notion-api'
 import { type NotionPageInfo, type PageError } from '@/lib/types'
 
 export async function GET(request: Request) {
-  console.log(request.url)
-
   const { searchParams } = new URL(request.url)
   const pageId = parsePageId(
     searchParams.get('id') || libConfig.rootNotionPageId
@@ -35,7 +33,6 @@ export async function GET(request: Request) {
   }
 
   const pageInfo = pageInfoOrError.data
-  console.log(pageInfo)
 
   return new ImageResponse(
     <div

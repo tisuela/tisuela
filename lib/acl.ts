@@ -45,7 +45,7 @@ export async function pageAcl({
     site.rootNotionSpaceId &&
     rootSpaceId !== site.rootNotionSpaceId
   ) {
-    if (process.env.NODE_ENV) {
+    if (process.env.NODE_ENV === 'production') {
       return {
         error: {
           statusCode: 404,

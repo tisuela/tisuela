@@ -24,14 +24,19 @@ export const metadata: Metadata = {
   description: config.description,
   manifest: '/manifest.json',
   icons: {
-    shortcut: '/favicon.ico',
     icon: [
+      {
+        url: '/favicon.svg',
+        type: 'image/svg+xml',
+        sizes: 'any'
+      },
       {
         url: '/favicon.png',
         type: 'image/png',
         sizes: '32x32'
       }
-    ]
+    ],
+    apple: '/apple-touch-icon.png'
   },
   appleWebApp: {
     capable: true,

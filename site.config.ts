@@ -14,7 +14,7 @@ export default siteConfig({
   author: 'Nathaniel Tisuela',
 
   // open graph metadata (optional)
-  description: 'Example Next.js Notion Starter Kit Site',
+  description: 'Nathaniel Tisuela - Software Engineer',
 
   // social usernames (optional)
   twitter: 'ntisuela',
@@ -54,6 +54,6 @@ export default siteConfig({
     {
       title: 'Missions',
       pageId: '35ea1f3d681d80b3bbf6d3ca8af17eec'
-    },
+    }
   ]
 })

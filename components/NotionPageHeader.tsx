@@ -18,12 +18,14 @@ function ToggleThemeButton() {
   }, [toggleDarkMode])
 
   return (
-    <div
-      className={cs('breadcrumb', 'button', !hasMounted && styles.hidden)}
+    <button
+      type='button'
+      className={cs('breadcrumb', 'button', styles.toggleThemeButton, !hasMounted && styles.hidden)}
       onClick={onToggleTheme}
+      aria-label='Toggle dark mode'
     >
       {hasMounted && isDarkMode ? <MoonIcon /> : <SunIcon />}
-    </div>
+    </button>
   )
 }
 

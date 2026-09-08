@@ -1,83 +1,77 @@
 Nathaniel Louis Tisuela
 ============
-Email: ntisuela@uci.edu
-Tel: (916)-601-5371
-Web: http://tisuela.com
 
-
+Email: ntisuela@uci.edu Tel: (916)-601-5371 Web: http://tisuela.com
 
 ## SKILLS
 
-  - OO Languages: Python Java C++ C 
-  - Web Development: GraphQL REST Flask Django React Express.js 
-  - AWS: EC2 RDS Elastic Beanstalk Amplify S3 
-  - DevOps: Github Actions Gitlab Pipelines Gitlab Runners Docker 
-  - Databases: MongoDB PostgreSQL Firebase 
+- OO Languages: Python Java C++ C
+- Web Development: GraphQL REST Flask Django React Express.js
+- AWS: EC2 RDS Elastic Beanstalk Amplify S3
+- DevOps: Github Actions Gitlab Pipelines Gitlab Runners Docker
+- Databases: MongoDB PostgreSQL Firebase
 
 ## EMPLOYMENT
 
-### *Computer Network Technician*, [Advanced Power and Energy Program](http://apep.uci.edu) (2018-10 — Present)
+### _Computer Network Technician_, [Advanced Power and Energy Program](http://apep.uci.edu) (2018-10 — Present)
 
 Maintained, troubleshooted, and deployed over 100 machines.
-  - Inspected and repaired XML documents to recover research, saving 3 weeks of work for students
-  - Developed powershell scripts to create technical reports and deploy for over 100 machines. This automation makes weekly tasks 3 times faster.
-  - Authored easy-to-follow guides to teach new softwares to over 100 users.
-  - Debugged Python software to resume monitoring of utilities in dozens of on-campus facilities.
 
-### *Technical Lead*, [StartSmart](https://startsmart.co/) (2020-10 — Present)
+- Inspected and repaired XML documents to recover research, saving 3 weeks of work for students
+- Developed powershell scripts to create technical reports and deploy for over 100 machines. This automation makes weekly tasks 3 times faster.
+- Authored easy-to-follow guides to teach new softwares to over 100 users.
+- Debugged Python software to resume monitoring of utilities in dozens of on-campus facilities.
 
- Leading back-end development and DevOps in a team of 7 developers
-  - Migrated to an AWS Stack of RDS, Elastic Beanstalk, S3, and Amplify, reducing cloud maintenance by 100%
-  - Implemented CI/CD pipelines to automate testing, code scanning, and deployment to AWS services
-  - Spearheaded migration from a monolithic web application to a Django REST back-end and a React front-end
-  - Dockerized applications, vastly improving the efficiency of local development
+### _Technical Lead_, [StartSmart](https://startsmart.co/) (2020-10 — Present)
 
-### *Projects Committee Member*, [UCI ICS Student Council](https://github.com/icssc-projects) (2020-08 — Present)
+Leading back-end development and DevOps in a team of 7 developers
 
- Currently part of a team of 4 other developers for a Web API for UCI course discovery using Express.js
-  - Implemented GraphQL which simplifies all our REST endpoints into 1 endpoint, making complex queries up to 500% more efficient
-  - Created CI/CD pipelines to automated documentation building and testing
-  - Identified SQL vulnerabilities
+- Migrated to an AWS Stack of RDS, Elastic Beanstalk, S3, and Amplify, reducing cloud maintenance by 100%
+- Implemented CI/CD pipelines to automate testing, code scanning, and deployment to AWS services
+- Spearheaded migration from a monolithic web application to a Django REST back-end and a React front-end
+- Dockerized applications, vastly improving the efficiency of local development
 
+### _Projects Committee Member_, [UCI ICS Student Council](https://github.com/icssc-projects) (2020-08 — Present)
+
+Currently part of a team of 4 other developers for a Web API for UCI course discovery using Express.js
+
+- Implemented GraphQL which simplifies all our REST endpoints into 1 endpoint, making complex queries up to 500% more efficient
+- Created CI/CD pipelines to automated documentation building and testing
+- Identified SQL vulnerabilities
 
 ## PROJECTS
 
-### *Creator*, [CourseCake](https://docs.coursecake.tisuela.com) (2020-07 — 2020-09)
+### _Creator_, [CourseCake](https://docs.coursecake.tisuela.com) (2020-07 — 2020-09)
 
-A Web and Python API for course discovery across universities.
-Created a Web/Python API for developing course discovery apps.
-  - Recruited and directed collaboration with other student developers from 3 other universities.
+A Web and Python API for course discovery across universities. Created a Web/Python API for developing course discovery apps.
 
-  - Launched CourseCake to become the most active cross-campus API supporting GraphQL and REST endpoints, cataloguing thousands of classes.
+- Recruited and directed collaboration with other student developers from 3 other universities.
 
-  - Publicized CourseCake through easy-to-understand and interactive documentation, making CourseCake a teachable tool.
+- Launched CourseCake to become the most active cross-campus API supporting GraphQL and REST endpoints, cataloguing thousands of classes.
 
-  - Developed sensible schemas to model course discovery based on existing course discovery tools.
+- Publicized CourseCake through easy-to-understand and interactive documentation, making CourseCake a teachable tool.
 
+- Developed sensible schemas to model course discovery based on existing course discovery tools.
 
-### *Co-Creator*, [FabFlix](https://github.com/nananananate/fabflix) (2020-01 — 2020-03)
+### _Co-Creator_, [FabFlix](https://github.com/nananananate/fabflix) (2020-01 — 2020-03)
 
-Proof-of-concept movie rental service
-Demonstrated Full-Stack development in this proof-of-concept movie rental service
-  - Developed master-slave architecture to effectively load balance over 100 users simultameously renting movies
+Proof-of-concept movie rental service Demonstrated Full-Stack development in this proof-of-concept movie rental service
 
-  - Deployed app onto GCP and AWS hosting services
+- Developed master-slave architecture to effectively load balance over 100 users simultameously renting movies
 
-  - Implemented a search engine which efficiently returns movies within seconds
+- Deployed app onto GCP and AWS hosting services
 
+- Implemented a search engine which efficiently returns movies within seconds
 
-### *Developer*, [Smoothie Genie](https://github.com/nananananate/smoothiegenie) (2020-01 — 2020-03)
+### _Developer_, [Smoothie Genie](https://github.com/nananananate/smoothiegenie) (2020-01 — 2020-03)
 
-Smoothie Recommendation IOS App
-Developed an iOS app that tracks user nutrition and suggests smoothies
-  - Compiled our nutrtion database (Firebase) through popular nutrition REST APIs
+Smoothie Recommendation IOS App Developed an iOS app that tracks user nutrition and suggests smoothies
 
-  - Actualized dynamic UI for food information
+- Compiled our nutrtion database (Firebase) through popular nutrition REST APIs
 
-  - Implemented tracking of food consumtion/nutrtion
+- Actualized dynamic UI for food information
 
-
-
+- Implemented tracking of food consumtion/nutrtion
 
 ## EDUCATION
 
@@ -85,24 +79,13 @@ Developed an iOS app that tracks user nutrition and suggests smoothies
 
 B.S. in Computer Science
 
-
-
 ## AFFILIATION
 
-### *President*, [Acts College Ministry](https://campusgroups.uci.edu/actscollege) (2019-09 — Present)
+### _President_, [Acts College Ministry](https://campusgroups.uci.edu/actscollege) (2019-09 — Present)
 
 Delegated event planning and led weekly meetings as first president of Acts @ UCI.
-  - With the help of the board, Acts saw membership increase by 200%.
-  - Conducted migration to remote meetings and activities due to COVID-19 (maintained majority member retention) through close teamwork with the board and sister clubs.
-  - Designed a new website and established presence on UCI's online system, seeing over 70 student engagements in 2 days during a virtual fair.
-  - Coordinated large group events with a team of 6 members, averaging 2 large group events a month both before and after COVID-19
 
-
-
-
-
-
-
-
-
-
+- With the help of the board, Acts saw membership increase by 200%.
+- Conducted migration to remote meetings and activities due to COVID-19 (maintained majority member retention) through close teamwork with the board and sister clubs.
+- Designed a new website and established presence on UCI's online system, seeing over 70 student engagements in 2 days during a virtual fair.
+- Coordinated large group events with a team of 6 members, averaging 2 large group events a month both before and after COVID-19

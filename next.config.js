@@ -21,24 +21,25 @@ export default {
     return [
       {
         source: '/missions-donate',
-        destination: 'https://renewalsv.churchcenter.com/giving/to/nate-tisuela-guatemala-stm-2026',
-        permanent: true,
+        destination:
+          'https://renewalsv.churchcenter.com/giving/to/nate-tisuela-guatemala-stm-2026',
+        permanent: true
       },
       {
         source: '/missions-subscribe',
         destination: 'https://forms.gle/NZvm9Cbooz3NWkqe7',
-        permanent: true,
+        permanent: true
       },
       {
         source: '/alpha-mixers',
         destination: 'https://forms.gle/2CjNd8pRjuCqjRNh6',
-        permanent: true,
+        permanent: true
       },
       {
         source: '/missions',
         destination: 'https://www.tisuela.com/cobn-missions-2026',
-        permanent: true,
-      },
+        permanent: true
+      }
     ]
   },
 

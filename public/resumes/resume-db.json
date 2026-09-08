@@ -68,12 +68,7 @@
     {
       "name": "OO Languages",
       "level": "Master",
-      "keywords": [
-        "Python",
-        "Java",
-        "C++",
-        "C"
-      ]
+      "keywords": ["Python", "Java", "C++", "C"]
     },
     {
       "name": "Web Development",
@@ -93,19 +88,12 @@
     {
       "name": "Scripting",
       "level": "Master",
-      "keywords": [
-        "Powershell",
-        "Javascript"
-      ]
+      "keywords": ["Powershell", "Javascript"]
     },
     {
       "name": "Databases",
       "level": "Master",
-      "keywords": [
-        "MongoDB",
-        "SQL",
-        "Firebase"
-      ]
+      "keywords": ["MongoDB", "SQL", "Firebase"]
     }
   ],
   "references": 0,

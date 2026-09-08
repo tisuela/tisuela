@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 
 import type * as types from '@/lib/types'
@@ -26,7 +27,13 @@ export function Page404({ pageId, error }: types.PageProps) {
           )
         )}
 
-        <img src='/404.png' alt='404 Not Found' className={styles.errorImage} />
+        <Image
+          src='/404.png'
+          alt='404 Not Found'
+          width={300}
+          height={300}
+          className={styles.errorImage}
+        />
       </main>
     </div>
   )
