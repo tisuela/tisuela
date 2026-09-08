@@ -154,7 +154,7 @@ const propertyLastEditedTimeValue = (
   defaultFn: () => React.ReactNode
 ) => {
   if (pageHeader && block?.last_edited_time) {
-    return `Last updated ${formatNotionDate(block?.last_edited_time, {
+    return `Last updated ${formatNotionDate(String(block.last_edited_time), {
       month: 'long'
     })}`
   }
@@ -171,10 +171,13 @@ const propertyDateValue = (
   defaultFn: () => React.ReactNode
 ) => {
   if (pageHeader && schema?.name?.toLowerCase() === 'published') {
-    const publishDate = data?.[0]?.[1]?.[0]?.[1]?.start_date
+    const dataArray = data as Array<unknown>
+    const publishDate = (dataArray?.[0] as Record<string, unknown>)?.[1] as Array<Record<string, unknown>> | undefined
+    const startDate = publishDate?.[0]?.[1] as Record<string, unknown> | undefined
+    const dateStr = startDate?.start_date as string | undefined
 
-    if (publishDate) {
-      return `${formatNotionDate(publishDate, {
+    if (dateStr) {
+      return `${formatNotionDate(dateStr, {
         month: 'long'
       })}`
     }
@@ -254,7 +257,8 @@ export function NotionPage({
 
   React.useEffect(() => {
     // add important objects to the window global for easy debugging
-    const g = window as Record<string, unknown>
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const g = window as any
     g.pageId = pageId
     g.recordMap = recordMap
     g.block = block
