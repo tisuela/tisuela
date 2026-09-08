@@ -24,7 +24,6 @@ import { searchNotion } from '@/lib/search-notion'
 import { useDarkMode } from '@/lib/use-dark-mode'
 
 import { Footer } from './Footer'
-import { Loading } from './Loading'
 import { NotionPageHeader } from './NotionPageHeader'
 import { PageAside } from './PageAside'
 
@@ -134,10 +133,7 @@ function Tweet({ id }: { id: string }) {
   )
 }
 
-const formatNotionDate = (
-  dateInput: string,
-  options: Intl.DateTimeFormatOptions = {}
-) => {
+const formatNotionDate = (dateInput: string) => {
   const parsedDate = new Date(dateInput)
   if (Number.isNaN(parsedDate.getTime())) {
     return dateInput
@@ -235,7 +231,7 @@ export function NotionPage({
 
   const pageAside = React.useMemo(
     () => (
-      <PageAside block={block!} recordMap={recordMap} isBlogPost={isBlogPost} />
+      <PageAside block={block!} isBlogPost={isBlogPost} />
     ),
     [block, recordMap, isBlogPost]
   )
@@ -243,14 +239,6 @@ export function NotionPage({
   const title = getBlockTitle(block, recordMap) || site.name
 
   React.useEffect(() => {
-    console.log('notion page', {
-      isDev: config.isDev,
-      title,
-      pageId,
-      rootNotionPageId: site.rootNotionPageId,
-      recordMap
-    })
-
     // add important objects to the window global for easy debugging
     const g = window as any
     g.pageId = pageId
@@ -283,8 +271,6 @@ export function NotionPage({
         pageAside={pageAside}
         footer={<Footer />}
       />
-
-
     </>
   )
 }
