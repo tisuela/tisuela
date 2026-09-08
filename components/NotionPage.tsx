@@ -24,7 +24,6 @@ import { searchNotion } from '@/lib/search-notion'
 import { useDarkMode } from '@/lib/use-dark-mode'
 
 import { Footer } from './Footer'
-import { Loading } from './Loading'
 import { NotionPageHeader } from './NotionPageHeader'
 import { PageAside } from './PageAside'
 
@@ -136,7 +135,7 @@ function Tweet({ id }: { id: string }) {
 
 const formatNotionDate = (
   dateInput: string,
-  options: Intl.DateTimeFormatOptions = {}
+  _options: Intl.DateTimeFormatOptions = {}
 ) => {
   const parsedDate = new Date(dateInput)
   if (Number.isNaN(parsedDate.getTime())) {
@@ -154,7 +153,7 @@ const propertyLastEditedTimeValue = (
   defaultFn: () => React.ReactNode
 ) => {
   if (pageHeader && block?.last_edited_time) {
-    return `Last updated ${formatNotionDate(String(block.last_edited_time), {
+    return `Last updated ${formatNotionDate(block.last_edited_time as string, {
       month: 'long'
     })}`
   }
@@ -172,8 +171,12 @@ const propertyDateValue = (
 ) => {
   if (pageHeader && schema?.name?.toLowerCase() === 'published') {
     const dataArray = data as Array<unknown>
-    const publishDate = (dataArray?.[0] as Record<string, unknown>)?.[1] as Array<Record<string, unknown>> | undefined
-    const startDate = publishDate?.[0]?.[1] as Record<string, unknown> | undefined
+    const publishDate = (dataArray?.[0] as Record<string, unknown>)?.[1] as
+      | Array<Record<string, unknown>>
+      | undefined
+    const startDate = publishDate?.[0]?.[1] as
+      | Record<string, unknown>
+      | undefined
     const dateStr = startDate?.start_date as string | undefined
 
     if (dateStr) {

@@ -20,7 +20,12 @@ function ToggleThemeButton() {
   return (
     <button
       type='button'
-      className={cs('breadcrumb', 'button', styles.toggleThemeButton, !hasMounted && styles.hidden)}
+      className={cs(
+        'breadcrumb',
+        'button',
+        styles.toggleThemeButton,
+        !hasMounted && styles.hidden
+      )}
       onClick={onToggleTheme}
       aria-label='Toggle dark mode'
     >

@@ -5,5 +5,6 @@ export default {
   rules: {
     'react/set-state-in-effect': 'off',
     'react/refs': 'off'
-  }
+  },
+  ignorePatterns: ['astro/']
 }
