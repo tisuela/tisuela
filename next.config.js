@@ -21,7 +21,7 @@ export default {
     return [
       {
         source: '/missions-donate',
-        destination: 'https://renewalsv.churchcenter.com/giving/to/nathaniel-louis-tisuela-sunnyvale-vbs-2024',
+        destination: 'https://renewalsv.churchcenter.com/giving/to/nate-tisuela-guatemala-stm-2026',
         permanent: true,
       },
       {
@@ -34,6 +34,14 @@ export default {
         destination: 'https://forms.gle/2CjNd8pRjuCqjRNh6',
         permanent: true,
       },
+      {
+        source: '/missions',
+        destination: 'https://www.tisuela.com/cobn-missions-2026',
+        permanent: true,
+      },
     ]
   },
+
+  // See https://react-tweet.vercel.app/next#troubleshooting
+  transpilePackages: ['react-tweet']
 }

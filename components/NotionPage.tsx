@@ -134,12 +134,24 @@ function Tweet({ id }: { id: string }) {
   )
 }
 
+const formatNotionDate = (
+  dateInput: string,
+  options: Intl.DateTimeFormatOptions = {}
+) => {
+  const parsedDate = new Date(dateInput)
+  if (Number.isNaN(parsedDate.getTime())) {
+    return dateInput
+  }
+
+  return formatDate(parsedDate.getTime())
+}
+
 const propertyLastEditedTimeValue = (
   { block, pageHeader }: any,
   defaultFn: () => React.ReactNode
 ) => {
   if (pageHeader && block?.last_edited_time) {
-    return `Last updated ${formatDate(block?.last_edited_time, {
+    return `Last updated ${formatNotionDate(block?.last_edited_time, {
       month: 'long'
     })}`
   }
@@ -155,7 +167,7 @@ const propertyDateValue = (
     const publishDate = data?.[0]?.[1]?.[0]?.[1]?.start_date
 
     if (publishDate) {
-      return `${formatDate(publishDate, {
+      return `${formatNotionDate(publishDate, {
         month: 'long'
       })}`
     }

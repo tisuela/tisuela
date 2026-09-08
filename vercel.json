@@ -1,0 +1,4 @@
+{
+  "installCommand": "npx pnpm@10.29.3 install --frozen-lockfile",
+  "buildCommand": "npx pnpm@10.29.3 build"
+}
